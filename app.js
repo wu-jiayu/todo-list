@@ -1,12 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
-
 const exphbs = require('express-handlebars')
-
 const bodyParser = require('body-parser')
-
 const Todo = require('./models/todo')
-
 const app = express()
 
 // setting routes
@@ -86,7 +82,7 @@ app.post('/todos/:id/delete', (req, res) => {
     .catch((error) => console.log(error))
 })
 
-// listen
+// listen on the Express Server 
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
 })
