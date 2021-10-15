@@ -4,12 +4,16 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Todo = require('./models/todo')
 const app = express()
+const PORT = process.env.PORT || 3000
 
 // setting routes
-mongoose.connect('mongodb://localhost/todo-list', {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
+
+const MONGODB_URI = process.env.MONGODB_URI || 3000
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/todo-list'
 
 const db = mongoose.connection
 
@@ -82,7 +86,7 @@ app.post('/todos/:id/delete', (req, res) => {
     .catch((error) => console.log(error))
 })
 
-// listen on the Express Server 
-app.listen(3000, () => {
-  console.log('App is running on http://localhost:3000')
+// listen on the Express Server
+app.listen(PORT, () => {
+  console.log(`App is running on http://localhost:${PORT}`)
 })
