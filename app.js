@@ -12,7 +12,6 @@ mongoose.connect(MONGODB_URI, {
   useUnifiedTopology: true,
 })
 
-const MONGODB_URI = process.env.MONGODB_URI || 3000
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/todo-list'
 
 const db = mongoose.connection
